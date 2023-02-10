@@ -1,0 +1,26 @@
+include header
+link(rel="stylesheet", href="/css/card.css") 
+body 
+    include navbar 
+    .container 
+        .card.mt-5(style='width: 100%; height: 30rem').p-2
+         .row
+          .col-7 
+            img.card-img-top(src="../"+db.photo  alt='...' style="height:25rem; width: 100%")
+          .col-5
+            ul.list-group.list-group-flush
+                p.discount= db.discount+"%"
+                li.text-light.py-2.list-group-item= "Name: "+db.name 
+                li.text-light.py-2.list-group-item= "Price: "+db.price
+                li.text-light.py-2.list-group-item= "Phone: "+db.phone
+                li.text-light.py-2.list-group-item.sale
+                    span= "Discount: " 
+                    span= (db.price-(db.price/100)*db.discount)
+                li.list-group-item
+                    a.link(href="/del/"+db.id)
+                        button.btn.btn-danger Delete 
+                    a.link(href="/edit/"+db.id).px-5
+                        button.btn.btn-outline-success Settings 
+                li.text-light.py-4.list-group-item= "Detailed: "
+                    br
+                    span.text-warning=db.comment

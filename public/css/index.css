@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none !important;
+    list-style: none;
+}
+
+body {
+    background-color: #f2f4f5;
+}
+.con {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 50px;
+}
+
+.product {
+    width: 262px;
+    height: 340px;
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+
+
+.pro-img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.pro-name {
+    padding: 15px 0 12px 0;
+}
+
+.row {
+    margin-top: 8px;
+}
+
+.pro-price {
+    font-weight: 600;
+}
+
+.pro-like {
+    font-size: 20px;
+    cursor: pointer;
+    color: rgb(138, 138, 138);
+    padding-top: 3px;
+}
+
+.pro-like:hover {
+    transform: scale(1.3);
+    color: pink ;
+}
+
+
+
+.likeCount {
+    position: relative;
+    top: -5px;
+    padding-left: 5px;
+}
+
+a {
+    color: #4c4c4c;
+}
+
+
+.category {
+    width: 130px;
+    border: 1px solid transparent;
+    box-shadow: 0 -5px 5px #00000013;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px 10px;
+    padding: 10px;
+    border-radius: 100px 100px 10px 10px;
+    transition: 0.3s ease;
+}
+
+.category:hover {
+    background: #fff;
+    transform: scale(1.2);
+    box-shadow: 0 0 20px #d3d3d3;
+}
+
+.cate {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 100px;
+    padding: 30px 0;
+    background-color: #1e252b13;
+}
+
+
+/* .parallax {
+    background-image: url("../img/Earth\ Space\ Art.jpg");
+    background-repeat: no-repeat;
+} */
+
+.cat-img {
+    width: 110px;
+    height: 100px;
+    border-radius: 50% ;
+    margin-bottom: 5px;
+}
+
+.cat-text {
+    text-align: center;
+}
+
+
+.conttt {
+    width: 100%;
+    height: 40vh;
+    padding-top: 40px;
+}
+
+.f {
+    display: flex;
+    justify-content: center;
+}
+
+.region {
+    width: 300px;
+    display: inline;
+    margin-right: 15px;
+}
+
+.b {
+    transform: translateY(-2px);
+}
+
+.region1 {
+    width: 300px;
+}

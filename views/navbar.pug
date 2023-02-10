@@ -1,0 +1,26 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light 
+  .container-fluid
+    button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarTogglerDemo03' aria-controls='navbarTogglerDemo03' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    a.navbar-brand.text-success(href='/') G-market
+    #navbarTogglerDemo03.collapse.navbar-collapse
+      ul.navbar-nav.mb-lg-0.me-auto
+       if(Iactive)
+        li.nav-item
+          a.nav-link.active(aria-current='page' href='/') Bosh sahifa
+       else 
+        li.nav-item
+          a.nav-link(aria-current='page' href='/') Bosh sahifa
+       if(Aactive)
+        li.nav-item
+          a.nav-link.active(href='/add') Mahsulot qo'shish
+       else 
+        li.nav-item
+          a.nav-link(href='/add') Mahsulot qo'shish
+      form(action="/search").d-flex.me-auto
+        input.form-control.me-2(type='search' placeholder='Search' name="search" aria-label='Search')
+        button.btn.btn-outline-success(type='submit') Qidiruv
+      a(href="/login")
+        button.ms-2.btn.btn-success Sign in 
+      a(href="/signup")
+        button.ms-2.btn.btn-primary Sign Up 

@@ -1,0 +1,87 @@
+include header 
+link(rel="stylesheet", href="/css/add.css")
+body 
+    include navbar
+    .container
+        if errors 
+            each error in errors 
+                .alert.alert-danger.alert-dismissible.fade.show.mt-3#alert-js(role='alert')
+                    p= error.msg
+                    button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+        if(datas) 
+            form.my-5.w-50.mx-auto(method="post" enctype="multipart/form-data")
+                .mb-3 
+                    label.form-label(for='name1') Name
+                    input#name1.form-control(type='text' name="name" value=datas.name)
+                .mb-3
+                    label.form-label(for='price1') Phone
+                    input#price1.form-control(type='number' name="phone" value=datas.phone)
+                .mb-3
+                    label.form-label(for='phone') Price
+                    input#phone1.form-control(type='phone' name="price" value=datas.price)
+                .mb-3
+                    label.form-label(for='discount1') Discount
+                    input#discount1.form-control(type='number' name="discount" value=datas.discount)
+                .mb-3
+                    label.form-label(for='category1') Category
+                    select#category1.form-select(name="category")
+                        option.form-control(value="computer") Computer 
+                        option.form-control(value="laptop") Laptop 
+                        option.form-control(value="mobile") Mobile 
+                        option.form-control(value="tablet") Tablet   
+                        option.form-control(value="tv") TV   
+                        option.form-control(value="iPod") iPods   
+                .mb-3
+                    label.form-label(for='comment1') Comment
+                    br
+                    textarea#comment1.form-control(col="30" row="10" name="comment" value=datas.comment)
+                .mb-3
+                    label.form-label(for='phone3') Region
+                    input#phone3.form-control(type='text' name="region" value=datas.region)
+                .mb-3
+                    label.form-label(for='discount12') District
+                    input#discount12.form-control(type='text' name="district" value=datas.district)
+                .mb-3
+                    label.form-label(for='photo1') Photo
+                    input#photo1.form-control(type='file' name="photo")
+                .mb-3
+                    button.btn.btn-primary.d-block.m-auto.w-100(type='submit') Submit 
+        else 
+            form.my-5.w-50.mx-auto(method="post" enctype="multipart/form-data")
+                .mb-3 
+                    label.form-label(for='name1') Name
+                    input#name1.form-control(type='text' name="name")
+                .mb-3
+                    label.form-label(for='price1') Phone
+                    input#price1.form-control(type='number' name="phone")
+                .mb-3
+                    label.form-label(for='phone') Price
+                    input#phone1.form-control(type='phone' name="price")
+                .mb-3
+                    label.form-label(for='discount1') Discount
+                    input#discount1.form-control(type='number' name="discount")
+                .mb-3
+                    label.form-label(for='category1') Category
+                    select#category1.form-select(name="category")
+                        option.form-control(value="computer") Computer 
+                        option.form-control(value="laptop") Laptop 
+                        option.form-control(value="mobile") Mobile 
+                        option.form-control(value="tablet") Tablet   
+                        option.form-control(value="tv") TV   
+                        option.form-control(value="iPod") iPods   
+                .mb-3
+                    label.form-label(for='comment1') Comment
+                    br
+                    textarea#comment1.form-control(col="30" row="10" name="comment")
+                .mb-3
+                    label.form-label(for='phone3') Region
+                    input#phone3.form-control(type='text' name="region")
+                .mb-3
+                    label.form-label(for='discount12') District
+                    input#discount12.form-control(type='text' name="district")
+                .mb-3
+                    label.form-label(for='photo1') Photo
+                    input#photo1.form-control(type='file' name="photo")
+                .mb-3
+                    button.btn.btn-primary.d-block.m-auto.w-100(type='submit') Submit 
+    

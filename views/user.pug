@@ -1,0 +1,44 @@
+include header 
+body 
+    include navbar 
+    .container.mt-4
+        if(errors) 
+                each error in errors 
+                    .alert.alert-danger.alert-dismissible.fade.show.mt-3#alert-js(role='alert')
+                        p.text-success= error.msg
+                        button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+        if(Sactive)
+            form.form-user.w-50.mx-auto(method="POST")
+                    .form-floating.mb-3
+                        input#floatingInput.form-control(type='text' placeholder="username" name="username")
+                        label(for='floatingInput') Username
+                    .form-floating.mb-3
+                        input#floatingInput.form-control(type='text' placeholder="lastname" name="lastname")
+                        label(for='floatingInput') Lastname
+                    .form-floating.mb-3
+                        input#floatingInput.form-control(type='text' placeholder="email" name="email")
+                        label(for='floatingInput') Email
+                    .form-floating.mb-3
+                        input#floatingInput.form-control(type='text' placeholder="login" name="login")
+                        label(for='floatingInput') Login
+                    .form-floating.mb-3
+                        input#floatingInput.form-control(type='text' placeholder="password" name="password")
+                        label(for='floatingInput') Password
+                    .form-floating.mb-3
+                        input#floatingInput.form-control(type='text' placeholder="username" name="password2")
+                        label(for='floatingInput') Password2
+                    .mt-3
+                        button.btn.btn-form.btn-primary.d-block.m-auto.w-100.py-2(type="submit") Create 
+        else  
+            form.form-user.w-50.mx-auto(method="POST" style="margin-top: 100px")
+                .form-floating.mb-3
+                    input#floatingInput.form-control(type='text' placeholder="login" name="login")
+                    label(for='floatingInput') Login
+                .form-floating.mb-3
+                    input#floatingInput.form-control(type='text' placeholder="password" name="password")
+                    label(for='floatingInput') Password
+                .form-floating.mb-3
+                    input#floatingInput.form-control(type='text' placeholder="username" name="password2")
+                    label(for='floatingInput') Password2
+                .mt-3
+                    button.btn.btn-form.btn-primary.d-block.m-auto.w-100.py-2(type="submit") Enter 

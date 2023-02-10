@@ -1,0 +1,69 @@
+include header 
+link(rel="stylesheet", href="/css/index.css")
+link(rel="stylesheet", href="/css/fontawesome-5.5/css/all.min.css")
+body 
+    include navbar
+    header
+        .conttt
+            .container 
+                .row 
+                    .col-6.f 
+                        form(action="/region")
+                            input.form-control.region(type="text" name="region" placeholder="Viloyatlar bo'yicha qidirsh") 
+                            button(type="submit").btn.btn-primary.b Qidirish
+                        
+                    .col-6 
+                        form(action="/price")
+                            .mb-3
+                                input.form-control.region1(type="number" name="start" placeholder="Qanchadan")
+                            .mb-3 
+                                input.form-control.region1(type="number" name="end" placeholder="Qanchagacha")
+                            button(type="submit").btn.btn-primary.b1 Qidirish
+                        a(href="/top/like") 
+                            button.btn.btn-success.mt-1 Top like
+        .container.parallax
+        .div
+            h3.text-center.my-4.text-success Bosh Toifalar
+        .container.cate
+            .category   
+                a.cat-a(href="/laptops")
+                    img.cat-img(src="../img/lap.webp", alt="")
+                a.cat-text(href="/laptops") Laptop 
+            .category   
+                a.cat-a(href="/computers")
+                    img.cat-img(src="../img/com.webp", alt="")
+                a.cat-text(href="/computers") Computer
+            .category   
+                a.cat-a(href="/tv")
+                    img.cat-img(src="../img/tv.webp", alt="")
+                a.cat-text(href="/tv") TV
+            .category   
+                a.cat-a(href="/tablets")
+                    img.cat-img(src="../img/tablet.webp", alt="")
+                a.cat-text(href="/tablets") Tablet
+            .category   
+                a.cat-a(href="/mobiles")
+                    img.cat-img(src="../img/tel.webp", alt="")
+                a.cat-text(href="/mobiles") Mobile
+            .category   
+                a.cat-a(href="/ipods")
+                    img.cat-img(src="../img/iPod.jpg", alt="")
+                a.cat-text(href="/ipods") iPod
+    h1.text-center.pt-4.pb-2=searchs 
+    .container.con
+        if(data)
+            each db in data
+                .product 
+                    img.pro-img(cardsIn="/card/"+db.id src="../"+db.photo, alt="")
+                    a(href="/card/"+db.id) 
+                        p.pro-name= db.name
+                    small.pro-location=db.region+", "+db.district+" tumani"
+                    br
+                    small.date= db.date.toDateString()
+                    .row 
+                        .col-7
+                            small.pro-price=db.price+" so'm" 
+                        .col-5
+                            ion-icon.pro-like(name='heart-outline' likeId="/like/"+db.id)
+                            small.likeCount= db.like
+        
